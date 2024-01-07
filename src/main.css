@@ -4,9 +4,9 @@ body {
   text-align: center;
 }
 .styleQuote {
-  --b: 0.5em; /* border width */
-  --c: 3em; /* corner size */
-  --r: 2em; /* corner rounding */
+  --b: 0.5em; 
+  --c: 3em; 
+  --r: 2em; 
   position: relative;
   margin: 1em auto;
   border: solid var(--b) transparent;
