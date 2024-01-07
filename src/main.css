@@ -1,0 +1,192 @@
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,
+    Verdana, sans-serif;
+  text-align: center;
+}
+.styleQuote {
+  --b: 0.5em; /* border width */
+  --c: 3em; /* corner size */
+  --r: 2em; /* corner rounding */
+  position: relative;
+  margin: 1em auto;
+  border: solid var(--b) transparent;
+  padding: 1em;
+  max-width: 23em;
+  font: 1.25em ubuntu, sans-serif;
+  font-weight: bold;
+  margin-top: 90px;
+  &::before {
+    position: absolute;
+    z-index: -1;
+    inset: calc(-1 * var(--b));
+    border: inherit;
+    border-radius: var(--r);
+    background: linear-gradient(orange, deeppink, purple) border-box;
+    --corner: conic-gradient(from -90deg at var(--c) var(--c), red 25%, #0000 0) 0 0 /
+      calc(100% - var(--c)) calc(100% - var(--c)) border-box;
+    --inner: conic-gradient(red 0 0) padding-box;
+    -webkit-mask: var(--corner), var(--inner);
+    -webkit-mask-composite: source-out;
+    mask: var(--corner) subtract, var(--inner);
+    content: '';
+  }
+}
+html {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+body {
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+  height: auto;
+  width: 100%;
+}
+b {
+  position: relative;
+  display: block;
+  font-family: helvetica neue, helvetica, sans-serif;
+  line-height: 1.15em;
+  margin-top: -1.15em;
+  top: 2.3em;
+  font-size: 0.67em;
+  font-weight: 400;
+  letter-spacing: 0.025em;
+  opacity: 0.75;
+  text-align: center;
+}
+
+b span {
+  font-size: 0.785em;
+  font-weight: 400;
+  opacity: 0.4;
+}
+
+#intro {
+  width: 200px;
+  margin: 100px auto 0;
+}
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  position: relative;
+}
+
+.button .bottom {
+  position: absolute;
+  left: 7px;
+  top: 7px;
+  width: 100%;
+  height: 100%;
+  background-color: #2acdc1;
+  display: block;
+  -webkit-transition: all 0.15s ease-out;
+  -moz-transition: all 0.15s ease-out;
+  -o-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+}
+
+.button .top {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 24px 34px 22px 34px;
+  border: 2px solid #04049d;
+}
+
+.button-dark .top {
+  border: 2px solid #fff;
+}
+
+.button .top .label {
+  font-family: sans-serif;
+  font-weight: 600;
+  color: #04049d;
+  font-size: 12px;
+  line-height: 110%;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-transition: all 0.15s ease-out;
+  -moz-transition: all 0.15s ease-out;
+  -o-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+}
+
+.button-dark .top .label {
+  color: #fff;
+}
+
+.button:hover .bottom {
+  left: 0;
+  top: 0;
+  background-color: #f3f3f3;
+}
+
+.button:hover .top .label {
+  color: #2acdc1;
+}
+
+.button-border {
+  position: absolute;
+  background-color: #2acdc1;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+
+.button:hover .top .button-border-left,
+.button:hover .top .button-border-right {
+  height: calc(100% + 2px);
+}
+
+.button:hover .top .button-border-top,
+.button:hover .top .button-border-bottom {
+  width: calc(100% + 2px);
+}
+
+.button-border-left {
+  left: -2px;
+  bottom: -2px;
+  width: 2px;
+  height: 0;
+}
+
+.button-border-top {
+  left: -2px;
+  top: -2px;
+  width: 0;
+  height: 2px;
+}
+
+.button-border-right {
+  right: -2px;
+  top: -2px;
+  width: 2px;
+  height: 0;
+}
+
+.button-border-bottom {
+  right: -2px;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+}
